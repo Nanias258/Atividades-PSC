@@ -1,30 +1,18 @@
 package com.mycompany.diariodenotas2;
 
-import static com.mycompany.diariodenotas2.DiariodeNotas2.nomealuno;
-import static com.mycompany.diariodenotas2.DiariodeNotas2.uc;
+
 import javax.swing.JOptionPane;
 
-public class Alunos {
-    int ra;
-    String senha;
-    String email;
-    int idade;
-    String telefone;
-    
-    public void entradaAluno(){
-        JOptionPane.showMessageDialog(null, "Bem vindo Aluno");
-        nomealuno=JOptionPane.showInputDialog("Digite seu nome: ");
-        ra=Integer.parseInt(JOptionPane.showInputDialog("Digite seu RA: "));
-        senha=JOptionPane.showInputDialog("Digite sua senha: ");
-        email=JOptionPane.showInputDialog("Digite seu email: ");
-        idade=Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade: "));
-        telefone=JOptionPane.showInputDialog("Digite seu telefone");
-        uc=JOptionPane.showInputDialog("Digite sua UC: ");
-        if(uc.equalsIgnoreCase("1")){
-            JOptionPane.showMessageDialog(null, "Bem vindo a Modelagem de Softwere "+nomealuno);
-        }else if(uc.equalsIgnoreCase("2")){
-            JOptionPane.showMessageDialog(null, "Bem vindo a Programação de Soluções Computacionais "+nomealuno);
-        }
+public class Alunos extends Usuario {
+    private int ra;
+    private String telefone;
+    private String senha;
+
+    public void identificarAluno(){
+      super.identificarUsuario();
+        setRa(Integer.parseInt(JOptionPane.showInputDialog("Digite seu RA: ")));
+        setTelefone(JOptionPane.showInputDialog("Digite seu telefone"));
+        
         
     }        
     public void visualizarNota(){
@@ -32,6 +20,50 @@ public class Alunos {
     }
     public void visualizarAtividade(){
         
+    }
+
+ 
+
+    /**
+     * @return the ra
+     */
+    public int getRa() {
+        return ra;
+    }
+
+    /**
+     * @param ra the ra to set
+     */
+    public void setRa(int ra) {
+        this.ra = ra;
+    }
+
+    /**
+     * @return the senha
+     */
+    public String getSenha() {
+        return senha;
+    }
+
+    /**
+     * @param senha the senha to set
+     */
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    /**
+     * @return the telefone
+     */
+    public String getTelefone() {
+        return telefone;
+    }
+
+    /**
+     * @param telefone the telefone to set
+     */
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
     
 }
